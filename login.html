@@ -1,51 +1,48 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <title>Login Page</title>
-        <link href="css/index.css" rel="stylesheet" type="text/css">
-        <!-- <link rel="icon" type="image/png" href="image/login.jpg"> -->
-        <style>
-            body{
-                background-image: url('Image/DSC_8721.jpg');
-                background-size: cover;
-                background-attachment: fixed;
-            }
-        </style>
-    </head>
+<head>
+    <title>Login Page</title>
+    <link href="css/index.css" rel="stylesheet" type="text/css">
+    <!-- <link rel="icon" type="image/png" href="image/login.jpg"> -->
+    <style>
+        body {
+            background-image: url('Image/DSC_8721.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
 
-    <body>
+<body>
 
-        <h1>Weddings</h1>
-        <p align="right">
-            <button type="submit" form="2">Back</button>
-        </p>
-        <p align="center"><font>Login into your account: </font></p>
+    <h1> Weddings </h1>
+    <div>
+        <form onsubmit="return validate()" action='userPage.html' method='get' id="1">
+            <p align="right"><button type="submit" form="2">Back</button></p>
+            <p align="center"><font> Login into your account: </font></p><br />
+            <table id="login">
+                <tr>
+                    <th align="right"><font id="f1"> E-mail id: </font></th>
+                    <th align="left"><input type="text" id='email' placeholder="char@char.domain"> &nbsp; <label id="lbl1"> Enter the Email-id. </label></th>
+                </tr>
+                <tr><td><br></td></tr>
+                <tr>
+                    <th align="right"><font id="f1"> Password: </font></th>
+                    <th align="left"><input type="password" id='paswd' placeholder="Password"> &nbsp; <label id="lbl2"> Enter the password. </label></th>
+                </tr>
+                <tr><td><br></td></tr>
+            </table>
+            <p align="center">
+                <button type="submit" class="submit" form="1"> Login </button>
+                <button onclick="location.reload()" type="reset" class="submit"> Reset </button>
+            </p>
+        </form>
+        <form action='index.html' method="get" id="2"></form>
+    </div>
 
-        <div>
-            <form action='userPage.html' id="1" method='get'>
-
-                <table id="login">
-                        <tr><td><br></td></tr>
-                        <tr>
-                            <th align="right"><font id="f1">E-mail id: </font></th>
-                            <th align="left"><input type="text" name='user'></th>
-                        </tr><tr><td><br></td></tr>
-                        <tr>
-                            <th align="right"><font id="f1">Password: </font></th>
-                            <th align="left"><input type="password" name='password'></th>
-                        </tr><tr><td><br></td></tr><tr><td><br></td></tr>
-                        <tr>
-                            <th align='center'><input id="submit" type="submit" name="submit" form="1" value="Login"></th>
-                            <th align='center'><input id="submit" type="reset" value="Reset"></th>
-                        </tr>
-                </table>
-
-            </form>
-            <form action='index.html' method="get" id="2"></form>
-
-        </div>
-
-    </body>
+</body>
 
 </html>
+
+<script type="text/javascript" src="login.js"></script>
