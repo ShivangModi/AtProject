@@ -20,17 +20,17 @@ function validateAdmin() {
     var aname = document.forms["form2"]["aname"].value;
     var pass = document.forms["form2"]["pass"].value;
 
-    if (aname == "user1" && pass == "user10702") {
-        alert("Welcome user1");
-        return true;
-    } else if (aname != "user1") {
+    if (aname != "user1") {
         document.getElementById("l2").style.visibility = "hidden";
         document.getElementById("l1").style.visibility = "visible";
         return false;
-    } else if (pass == "") {
+    } else if (pass != "user10702") {
         document.getElementById("l1").style.visibility = "hidden";
         document.getElementById("l2").style.visibility = "visible";
         return false;
+    } else {
+        alert("Welcome user1");
+        return true;
     }
 }
 
