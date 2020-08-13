@@ -18,18 +18,18 @@
 
     <h1> Weddings </h1>
     <div>
-        <form onsubmit="return validate()" action='userPage.html' method='get' id="1">
+        <form name="form1" onsubmit="return validateLogin()" action='userPage.html' method='get' id="1">
             <p align="right"><button type="submit" form="2">Back</button></p>
             <p align="center"><font> Login into your account: </font></p><br />
             <table id="login">
                 <tr>
                     <th align="right"><font id="f1"> E-mail id: </font></th>
-                    <th align="left"><input type="text" id='email' placeholder="char@char.domain"> &nbsp; <label id="lbl1"> Enter the Email-id. </label></th>
+                    <th align="left"><input type="text" name="email" placeholder="char@char.domain"> &nbsp; <label id="lbl1"> Enter the Email-id. </label></th>
                 </tr>
                 <tr><td><br></td></tr>
                 <tr>
                     <th align="right"><font id="f1"> Password: </font></th>
-                    <th align="left"><input type="password" id='paswd' placeholder="Password"> &nbsp; <label id="lbl2"> Enter the password. </label></th>
+                    <th align="left"><input type="password" name="paswd" placeholder="Password"> &nbsp; <label id="lbl2"> Enter the password. </label></th>
                 </tr>
                 <tr><td><br></td></tr>
             </table>
@@ -45,4 +45,4 @@
 
 </html>
 
-<script type="text/javascript" src="login.js"></script>
+<script type="text/javascript" src="validate.js"></script>
