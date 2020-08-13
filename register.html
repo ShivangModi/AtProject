@@ -17,127 +17,127 @@
 
     <h1>Weddings</h1>
     <div align="center">
-        <p align="right"><button type="submit" form="2">Back</button></p>
-        <p align="center"><font>Register your account: </font></p><br>
-        <form onsubmit="return validate()" action='index.html' method='get' id="1">
+        <form name="form3" onsubmit="return validateRegister()" action='index.html' method='get' id="1">
+            <p align="right"><button type="submit" form="2">Back</button></p>
+            <p align="center"><font> Register your account: </font></p><br>
             <table id="register">
                 <tr>
-                    <th align="right"><font id="f1">First Name: </font></th>
-                    <th align="left"><input type="text" id="f_n" required=""> &nbsp; <label id="l1"></label></th>
+                    <th align="right"><font id="f1"> First Name: </font></th>
+                    <th align="left"><input type="text" name="f_n" required=""></th>
                 </tr>
                 <tr><td><br></td></tr>
                 <tr>
-                    <th align="right"><font id="f1">Middel Name: </font></th>
-                    <th align="left"><input type="text" id="m_n" required> &nbsp; <label id="l2"></label></th>
+                    <th align="right"><font id="f1"> Middel Name: </font></th>
+                    <th align="left"><input type="text" name="m_n" required></th>
                 </tr>
                 <tr><td><br></td></tr>
                 <tr>
-                    <th align="right"><font id="f1">Last Name: </font></th>
-                    <th align="left"><input type="text" id="l_n" required> &nbsp; <label  id="l3"></label></th>
+                    <th align="right"><font id="f1"> Last Name: </font></th>
+                    <th align="left"><input type="text" name="l_n" required></label></th>
                 </tr>
                 <tr><td><br></td></tr>
                 <tr>
-                    <th align="right"><font id="f1">Age: </font></th>
-                    <th align="left"><input type="tel" id="age" pattern="[0-9]{2}" required> &nbsp; <label id="l4"></label></th>
+                    <th align="right"><font id="f1"> Age: </font></th>
+                    <th align="left"><input type="tel" name="age" pattern="[0-9]{2}" required></th>
                 </tr>
                 <tr><td><br></td></tr>
                 <tr>
-                    <th align="right"><font id="f1">Gender: </font> &nbsp; <label id="l5"></label></th>
+                    <th align="right"><font id="f1"> Gender: </font></th>
                     <th align="left">
-                        <select id="gender" required>
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                        </select> &nbsp; <label id="l6"></label>
+                        <select name="gender" required>
+                            <option value="Male"> Male </option>
+                            <option value="Female"> Female </option>
+                        </select></label>
                     </th>
                 </tr>
                 <tr><td><br></td></tr>
                 <tr>
-                    <th align="right"><font id="f1">Email: </font></th>
-                    <th align="left"><input type="text" id='user' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="char@char.domain" required> &nbsp; <label id="l7"></label></th>
+                    <th align="right"><font id="f1"> Email: </font></th>
+                    <th align="left"><input type="text" name='email' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="char@char.domain" required></th>
                 </tr>
                 <tr><td><br></td></tr>
                 <tr>
-                    <th align="right"><font id="f1">New Password: </font></th>
-                    <th align="left"><input type="password" id='password' required> &nbsp; <label id="l8"></label></th>
+                    <th align="right"><font id="f1"> New Password: </font></th>
+                    <th align="left"><input type="password" name='pass1' required></th>
                 </tr>
                 <tr><td><br></td></tr>
                 <tr>
-                    <th align="right"><font id="f1">Re-enter Password: </font></th>
-                    <th align="left"><input type="password" id='password1' required> &nbsp; <label></label></th>
+                    <th align="right"><font id="f1"> Re-enter Password: </font></th>
+                    <th align="left"><input type="password" name='pass2' required></th>
                 </tr>
                 <tr><td><br></td></tr>
                 <tr>
-                    <th align="right"><font id="f1">Mobile No.: </font></th>
-                    <th align="left"><input type="tel" id="mobile" pattern="[0-9]{10}" required> &nbsp; <label id="l9"></label></th>
+                    <th align="right"><font id="f1"> Mobile No.: </font></th>
+                    <th align="left"><input type="tel" name="mobile" pattern="[0-9]{10}" required></th>
                 </tr>
                 <tr><td><br></td></tr>
                 <tr>
-                    <th align="right"><font id="f1">Mother Tongue: </font>
+                    <th align="right"><font id="f1"> Mother Tongue: </font>
                     <th align="left">
-                        <select id="tongue" required>
-                            <option value="Hindi">Hindi</option>
-                            <option value="Sanskrit">Sanskrit</option>
-                            <option value="Gujarati">Gujarati</option>
-                            <option value="Marathi">Marathi</option>
-                            <option value="English">English</option>
-                            <option value="Telugu">Telugu</option>
-                            <option value="Tamil">Tamil</option>
-                            <option value="Bengali">Bengali</option>
-                            <option value="Kannada">Kannada</option>
-                            <option value="Malayalam">Malayalam</option>
-                            <option value="Punjabi">Punjabi</option>
-                        </select> &nbsp; <label id="l10"></label>
+                        <select name="tongue" required>
+                            <option value="Hindi"> Hindi </option>
+                            <option value="Sanskrit"> Sanskrit </option>
+                            <option value="Gujarati"> Gujarati </option>
+                            <option value="Marathi"> Marathi </option>
+                            <option value="English"> English </option>
+                            <option value="Telugu"> Telugu </option>
+                            <option value="Tamil"> Tamil </option>
+                            <option value="Bengali"> Bengali </option>
+                            <option value="Kannada"> Kannada </option>
+                            <option value="Malayalam"> Malayalam </option>
+                            <option value="Punjabi"> Punjabi </option>
+                        </select>
                     </th>
                 </tr>
                 <tr><td><br></td></tr>
                 <tr>
-                    <th align="right"><font id="f1">Height(cm): </font></th>
-                    <th align="left"><input type="text" id='height' pattern="[0-9]{2,3}" required> &nbsp; <label id="l11"></label></th>
+                    <th align="right"><font id="f1"> Height(cm): </font></th>
+                    <th align="left"><input type="text" name='height' pattern="[0-9]{2,3}" required></th>
                 </tr>
                 <tr><td><br></td></tr>
                 <tr>
-                    <th align="right"><font id="f1">Weight(kg): </font></th>
-                    <th align="left"><input type="text" id='weight' pattern="[0-9]{2,3}" required> &nbsp; <label id="l12"></label></th>
+                    <th align="right"><font id="f1"> Weight(kg): </font></th>
+                    <th align="left"><input type="text" name='weight' pattern="[0-9]{2,3}" required></th>
                 </tr>
                 <tr><td><br></td></tr>
                 <tr>
-                    <th align="right"><font id="f1">Graduation: </font></th>
-                    <th align="left"><input type="text" id='graduation' required> &nbsp; <label id="l13"></label></th>
+                    <th align="right"><font id="f1"> Graduation: </font></th>
+                    <th align="left"><input type="text" name='graduation' required></th>
                 </tr>
                 <tr><td><br></td></tr>
                 <tr>
-                    <th align="right"><font id="f1">Marital Status: </font></th>
+                    <th align="right"><font id="f1"> Marital Status: </font></th>
                     <th align="left">
-                        <select id="status" required>
-                            <option value="Unmarried">Unmarried</option>
-                            <option value="Married">Married</option>
-                        </select> &nbsp; <label id="l14"></label>
+                        <select name="status" required>
+                            <option value="Unmarried"> Unmarried </option>
+                            <option value="Married"> Married </option>
+                        </select>
                     </th>
                 </tr>
                 <tr><td><br></td></tr>
                 <tr>
-                    <th align="right"><font id="f1">Address: </font></th>
-                    <th align="left"><textarea id="address" cols="40" rows="5" required></textarea> &nbsp; <label id="l15"></label></th>
+                    <th align="right"><font id="f1"> Address: </font></th>
+                    <th align="left"><textarea name="addr" cols="40" rows="5" required></textarea></th>
                 </tr>
                 <tr><td><br></td></tr>
                 <tr>
-                    <th align="right"><font id="f1">Pin Code: </font></th>
-                    <th align="left"><input type="tel" id='pin' pattern="[0-9]{6}" required> &nbsp; <label id="l16"></label></th>
+                    <th align="right"><font id="f1"> Pin Code: </font></th>
+                    <th align="left"><input type="tel" name='pin' pattern="[0-9]{6}" required></th>
                 </tr>
                 <tr><td><br></td></tr>
                 <tr>
-                    <th align="right"><font id="f1">City: </font></th>
-                    <th align="left"><input type="text" id='city' required> &nbsp; <label id="l17"></label></th>
+                    <th align="right"><font id="f1"> City: </font></th>
+                    <th align="left"><input type="text" id='city' required></th>
                 </tr>
                 <tr><td><br></td></tr>
                 <tr>
-                    <th align="right"><font id="f1">State: </font></th>
-                    <th align="left"><input type="text" id='state' required> &nbsp; <label id="l19"></label></th>
+                    <th align="right"><font id="f1"> State: </font></th>
+                    <th align="left"><input type="text" id='state' required></th>
                 </tr>
                 <tr><td><br></td></tr>
                 <tr>
-                    <th align="right"><font id="f1">Country: </font></th>
-                    <th align="left"><input type="text" id='country' required> &nbsp; <label id="l20"></label></th>
+                    <th align="right"><font id="f1"> Country: </font></th>
+                    <th align="left"><input type="text" name='country' required></th>
                 </tr>
                 <tr><td><br></td></tr>
             </table>
@@ -148,38 +148,29 @@
             </p>
         <form action='index.html' method="get" id="2"></form>
     </div>
-    <label align="left" id="op"></label>
+    <div align="left">
+        <label id="l1"></label></th><br>
+        <label id="l2"></label></th><br>
+        <label id="l3"></label></th><br>
+        <label id="l4"></label></th><br>
+        <label id="l5"></label></th><br>
+        <label id="l6"></label></th><br>
+        <label id="l18"></label></th><br>
+        <label id="l7"></label></th><br>
+        <label id="l8"></label></th><br>
+        <label id="l9"></label></th><br>
+        <label id="l10"></label></th><br>
+        <label id="l11"></label></th><br>
+        <label id="l12"></label></th><br>
+        <label id="l13"></label></th><br>
+        <label id="l14"></label></th><br>
+        <label id="l15"></label></th><br>
+        <label id="l16"></label></th><br>
+        <label id="l17"></label></th><br>
+    </div>
 
 </body>
 
 </html>
 
-<script type="text/javascript" src="register.js"></script>
-<!--<script type="text/javascript">
-    function validate() {
-        var f_n = document.getElementById("f_n").innerHTML;
-        var m_n = document.getElementById("m_n").innerHTML;
-        var l_n = document.getElementById("l_n").innerHTML;
-        var age = document.getElementById("age").innerHTML;
-        var gender = document.getElementById("gender").value;
-        var email = document.getElementById("email").innerHTML;
-        var pass1 = document.getElementById("pass1").innerHTML;
-        var pass2 = document.getElementById("pass2").innerHTML;
-        var mobile = document.getElementById("mobile").innerHTML;
-        var tongue = document.getElementById("tongue").value;
-        var height = document.getElementById("height").innerHTML;
-        var weight = document.getElementById("weight").innerHTML;
-        var graduation = document.getElementById("graduation").innerHTML;
-        var status = document.getElementById("status").value;
-        var addr = document.getElementById("addr").innerHTML;
-        var pin = document.getElementById("pin").innerHTML;
-        var city = document.getElementById("city").innerHTML;
-        var state = document.getElementById("state").innerHTML;
-        var country = document.getElementById("country").innerHTML;
-
-        if (pass1 == pass2) {
-            
-            return false;
-        }
-    }
-</script>-->
+<script type="text/javascript" src="validate.js"></script>
