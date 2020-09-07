@@ -53,7 +53,6 @@ function validateRegister() {
     var pin = document.forms["form3"]["pin"].value;
     var city = document.forms["form3"]["city"].value;
     var state = document.forms["form3"]["state"].value;
-    var country = document.forms["form3"]["country"].value;
 
     if(pass1 == pass2){
         document.getElementById("l1").innerHTML = "First Name: " + f_n;
@@ -73,7 +72,6 @@ function validateRegister() {
         document.getElementById("l14").innerHTML = "Pin: " + pin;
         document.getElementById("l15").innerHTML = "City: " + city;
         document.getElementById("l16").innerHTML = "State: " + state;
-        document.getElementById("l17").innerHTML = "Country: " + country;
 
         document.getElementById("l1").style.visibility = "visible";
         document.getElementById("l2").style.visibility = "visible";
@@ -92,7 +90,6 @@ function validateRegister() {
         document.getElementById("l14").style.visibility = "visible";
         document.getElementById("l15").style.visibility = "visible";
         document.getElementById("l16").style.visibility = "visible";
-        document.getElementById("l17").style.visibility = "visible";
 
         return false;
     }

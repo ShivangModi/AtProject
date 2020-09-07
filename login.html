@@ -3,8 +3,18 @@
 
 <head>
     <title>Login Page</title>
+
+    <!--CSS-->
     <link href="css/index.css" rel="stylesheet" type="text/css">
     <!-- <link rel="icon" type="image/png" href="image/login.jpg"> -->
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
     <style>
         body {
             background-image: url('Image/DSC_8721.jpg');
@@ -16,27 +26,29 @@
 
 <body>
 
-    <h1> Weddings </h1>
+    <font><h1 align="right">Weddings </h1></font>
     <div>
         <form name="form1" onsubmit="return validateLogin()" action='userPage.html' method='get' id="1">
-            <p align="right"><button type="submit" form="2">Back</button></p>
-            <p align="center"><font> Login into your account: </font></p><br />
-            <table id="login">
-                <tr>
-                    <th align="right"><font id="f1"> E-mail id: </font></th>
-                    <th align="left"><input type="text" value="test@test.com" name="email" placeholder="char@char.domain"> &nbsp; <label id="lbl1"> Enter the Email-id. </label></th>
-                </tr>
-                <tr><td><br></td></tr>
-                <tr>
-                    <th align="right"><font id="f1"> Password: </font></th>
-                    <th align="left"><input type="password" value="12345" name="paswd" placeholder="Password"> &nbsp; <label id="lbl2"> Enter the password. </label></th>
-                </tr>
-                <tr><td><br></td></tr>
-            </table>
-            <p align="center">
-                <button type="submit" class="submit" form="1"> Login </button>
-                <button onclick="location.reload()" type="reset" class="submit"> Reset </button>
-            </p>
+            <button type="submit" class="btn btn-secondary" form="2"> Back </button><br /><br />
+            <div class="card bg-transparent  text-white">
+                <h3 class="card-header"> Login into your account </h3>
+                <div class="card-body">
+                    <div class="form-group mx-sm-3 mb-2">
+                        <label> Email id  &nbsp; &nbsp; <label class="lbl" id="lbl1"> Enter the Email-id. </label> </label>
+                        <input type="email" class="form-control"  value="test@test.com" name="email" placeholder="char@char.domain" aria-describedby="emailHelp">
+                        <small id="emailHelp" class="form-text text-info">We'll never share your email with anyone else.</small>
+                    </div><br />
+                    <div class="form-group mx-sm-3 mb-2">
+                        <label> Password  &nbsp; &nbsp; <label id="lbl2" class="lbl"> Enter the password. </label></label>
+                        <input type="password" class="form-control"  value="12345" name="paswd" placeholder="Password">
+                    </div><br />
+                    <div class="form-group mx-sm-3 mb-2">
+                        <button type="submit" class="btn btn-secondary" form="1"> Login </button>
+                        &nbsp; &nbsp; &nbsp; &nbsp;
+                        <button onclick="location.reload()" type="reset" class="btn btn-secondary"> Reset </button>
+                    </div>
+                </div>
+            </div>
         </form>
         <form action='index.html' method="get" id="2"></form>
     </div>
