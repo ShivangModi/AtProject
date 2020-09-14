@@ -2,9 +2,19 @@
 <html>
 
 <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
     <title>Admin Page</title>
     <link href="css/button.css" rel="stylesheet" type="text/css">
     <!-- <link rel="icon" type="image/png" href="image/login.jpg"> -->
+    <!--CSS-->
+    <link href="css/index.css" rel="stylesheet" type="text/css">
     <style>
         body {
             background-image: url('Image/DSC_8721.jpg');
@@ -16,14 +26,16 @@
 
 <body>
 
-    <h1>Weddings</h1>
-    <p align="center">
-        <input type="submit" name="submit" value="User Details" form="1">
-        <input type="submit" name="submit" value="Log Out" form="2">
-    </p>
+    <font><h1 align="right"> Weddings </h1></font>
+
+    <!-- Button to redirect a page -->
+    <span>
+        <button type="submit" class="btn btn-secondary" form="1"> User Details </button>
+        <button type="submit" class="btn btn-secondary" form="2"> Log Out </button>
+    </span><br /><br />
 
     <form action='userDetail.html' method='get' id="1"></form>
-    <form action='index.html' method='get' id="2"></form>
+    <form onsubmit="alert('You are logged out from Admin Page');" action='index.html' method='get' id="2"></form>
 
 </body>
 

@@ -1,95 +1,81 @@
 function validateLogin() {
-    var email = document.forms["form1"]["email"].value;
-    var paswd = document.forms["form1"]["paswd"].value;
+    var email = document.forms["loginForm"]["email"].value;
+    var paswd = document.forms["loginForm"]["paswd"].value;
 
     if (email == "") {
-        document.getElementById("lbl2").style.visibility = "hidden";
-        document.getElementById("lbl1").style.visibility = "visible";
+        document.getElementById("l_lbl2").style.visibility = "hidden";
+        document.getElementById("l_lbl1").style.visibility = "visible";
         return false;
     } else if (paswd == "") {
-        document.getElementById("lbl1").style.visibility = "hidden";
-        document.getElementById("lbl2").style.visibility = "visible";
+        document.getElementById("l_lbl1").style.visibility = "hidden";
+        document.getElementById("l_lbl2").style.visibility = "visible";
         return false;
     } else {
-        confirm("Welcome to Weddings.");
-        return true;
-    }
-}
-
-function validateAdmin() {
-    var aname = document.forms["form2"]["aname"].value;
-    var pass = document.forms["form2"]["pass"].value;
-
-    if (aname != "user1") {
-        document.getElementById("l2").style.visibility = "hidden";
-        document.getElementById("l1").style.visibility = "visible";
-        return false;
-    } else if (pass != "user10702") {
-        document.getElementById("l1").style.visibility = "hidden";
-        document.getElementById("l2").style.visibility = "visible";
-        return false;
-    } else {
-        confirm("Welcome user1");
+        alert("Welcome to Weddings.");
         return true;
     }
 }
 
 function validateRegister() {
-    var f_n = document.forms["form3"]["f_n"].value;
-    var m_n = document.forms["form3"]["m_n"].value;
-    var l_n = document.forms["form3"]["l_n"].value;
-    var age = document.forms["form3"]["age"].value;
-    var gender = document.forms["form3"]["gender"].value;
-    var email = document.forms["form3"]["email"].value;
-    var pass1 = document.forms["form3"]["pass1"].value;
-    var pass2 = document.forms["form3"]["pass2"].value;
-    var mobile = document.forms["form3"]["mobile"].value;
-    var tongue = document.forms["form3"]["tongue"].value;
-    var height = document.forms["form3"]["height"].value;
-    var weight = document.forms["form3"]["weight"].value;
-    var graduation = document.forms["form3"]["graduation"].value;
-    var status = document.forms["form3"]["status"].value;
-    var addr = document.forms["form3"]["addr"].value;
-    var pin = document.forms["form3"]["pin"].value;
-    var city = document.forms["form3"]["city"].value;
-    var state = document.forms["form3"]["state"].value;
+    var f_n = document.forms["registerForm"]["f_n"].value;
+    var m_n = document.forms["registerForm"]["m_n"].value;
+    var l_n = document.forms["registerForm"]["l_n"].value;
+    var age = document.forms["registerForm"]["age"].value;
+    var gender = document.forms["registerForm"]["gender"].value;
+    var email = document.forms["registerForm"]["email"].value;
+    var paswd1 = document.forms["registerForm"]["paswd1"].value;
+    var paswd2 = document.forms["registerForm"]["paswd2"].value;
+    var mobile = document.forms["registerForm"]["mobile"].value;
+    var tongue = document.forms["registerForm"]["tongue"].value;
+    var height = document.forms["registerForm"]["height"].value;
+    var weight = document.forms["registerForm"]["weight"].value;
+    var graduation = document.forms["registerForm"]["graduation"].value;
+    var status = document.forms["registerForm"]["status"].value;
+    var addr = document.forms["registerForm"]["addr"].value;
+    var pin = document.forms["registerForm"]["pin"].value;
+    var city = document.forms["registerForm"]["city"].value;
+    var state = document.forms["registerForm"]["state"].value;
+    var country = document.forms["registerForm"]["country"].value;
 
-    if(pass1 == pass2){
-        document.getElementById("l1").innerHTML = "First Name: " + f_n;
-        document.getElementById("l2").innerHTML = "Middel Name: " + m_n;
-        document.getElementById("l3").innerHTML = "Last Name: " + l_n;
-        document.getElementById("l4").innerHTML = "Age: " + age;
-        document.getElementById("l5").innerHTML = "Gender: " + gender;
-        document.getElementById("l6").innerHTML = "E-mail id: " + email;
-        document.getElementById("l18").innerHTML = "password:" + pass1;
-        document.getElementById("l7").innerHTML = "Mobile No.: " + mobile;
-        document.getElementById("l8").innerHTML = "Tongue: " + tongue;
-        document.getElementById("l9").innerHTML = "Height: " + height;
-        document.getElementById("l10").innerHTML = "Weight: " + weight;
-        document.getElementById("l11").innerHTML = "Graduation: " + graduation;
-        document.getElementById("l12").innerHTML = "Marital status: " + status;
-        document.getElementById("l13").innerHTML = "Address: " + addr;
-        document.getElementById("l14").innerHTML = "Pin: " + pin;
-        document.getElementById("l15").innerHTML = "City: " + city;
-        document.getElementById("l16").innerHTML = "State: " + state;
+    if(paswd1 == paswd2){
+        document.getElementById("r_lbl1").innerHTML = f_n;
+        document.getElementById("r_lbl2").innerHTML = m_n;
+        document.getElementById("r_lbl3").innerHTML = l_n;
+        document.getElementById("r_lbl4").innerHTML = age;
+        document.getElementById("r_lbl5").innerHTML = gender;
+        document.getElementById("r_lbl6").innerHTML = email;
+        document.getElementById("r_lbl7").innerHTML = paswd1;
+        document.getElementById("r_lbl8").innerHTML = mobile;
+        document.getElementById("r_lbl9").innerHTML = tongue;
+        document.getElementById("r_lbl10").innerHTML = height;
+        document.getElementById("r_lbl11").innerHTML = weight;
+        document.getElementById("r_lbl12").innerHTML = graduation;
+        document.getElementById("r_lbl13").innerHTML = status;
+        document.getElementById("r_lbl14").innerHTML = addr;
+        document.getElementById("r_lbl15").innerHTML = city;
+        document.getElementById("r_lbl16").innerHTML = state;
+        document.getElementById("r_lbl17").innerHTML = pin;
+        document.getElementById("r_lbl18").innerHTML = country;
 
-        document.getElementById("l1").style.visibility = "visible";
-        document.getElementById("l2").style.visibility = "visible";
-        document.getElementById("l3").style.visibility = "visible";
-        document.getElementById("l4").style.visibility = "visible";
-        document.getElementById("l5").style.visibility = "visible";
-        document.getElementById("l6").style.visibility = "visible";
-        document.getElementById("l18").style.visibility = "visible";
-        document.getElementById("l7").style.visibility = "visible";
-        document.getElementById("l8").style.visibility = "visible";
-        document.getElementById("l9").style.visibility = "visible";
-        document.getElementById("l10").style.visibility = "visible";
-        document.getElementById("l11").style.visibility = "visible";
-        document.getElementById("l12").style.visibility = "visible";
-        document.getElementById("l13").style.visibility = "visible";
-        document.getElementById("l14").style.visibility = "visible";
-        document.getElementById("l15").style.visibility = "visible";
-        document.getElementById("l16").style.visibility = "visible";
+        document.getElementById("r_lbl1").style.visibility = "visible";
+        document.getElementById("r_lbl2").style.visibility = "visible";
+        document.getElementById("r_lbl3").style.visibility = "visible";
+        document.getElementById("r_lbl4").style.visibility = "visible";
+        document.getElementById("r_lbl5").style.visibility = "visible";
+        document.getElementById("r_lbl6").style.visibility = "visible";
+        document.getElementById("r_lbl7").style.visibility = "visible";
+        document.getElementById("r_lbl8").style.visibility = "visible";
+        document.getElementById("r_lbl9").style.visibility = "visible";
+        document.getElementById("r_lbl10").style.visibility = "visible";
+        document.getElementById("r_lbl11").style.visibility = "visible";
+        document.getElementById("r_lbl12").style.visibility = "visible";
+        document.getElementById("r_lbl13").style.visibility = "visible";
+        document.getElementById("r_lbl14").style.visibility = "visible";
+        document.getElementById("r_lbl15").style.visibility = "visible";
+        document.getElementById("r_lbl16").style.visibility = "visible";
+        document.getElementById("r_lbl17").style.visibility = "visible";
+        document.getElementById("r_lbl18").style.visibility = "visible";
+        alert("Registration is done!!! Now you can login in our website. ")
 
         return false;
     }
@@ -98,4 +84,22 @@ function validateRegister() {
         return false;
     }
 
+}
+
+function validateAdmin() {
+    var aname = document.forms["adminForm"]["aname"].value;
+    var paswd = document.forms["adminForm"]["paswd"].value;
+
+    if (aname != "user1") {
+        document.getElementById("a_lbl2").style.visibility = "hidden";
+        document.getElementById("a_lbl1").style.visibility = "visible";
+        return false;
+    } else if (paswd != "user10702") {
+        document.getElementById("a_lbl1").style.visibility = "hidden";
+        document.getElementById("a_lbl2").style.visibility = "visible";
+        return false;
+    } else {
+        alert("Welcome user1");
+        return true;
+    }
 }

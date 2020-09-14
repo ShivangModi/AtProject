@@ -1,10 +1,19 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
 <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
     <title>User Page</title>
-    <link href="css/button.css" rel="stylesheet" type="text/css">
     <!-- <link rel="icon" type="image/png" href="image/login.jpg"> -->
+    <!--CSS-->
+    <link href="css/index.css" rel="stylesheet" type="text/css">
     <style>
         body {
             background-image: url('Image/DSC_8721.jpg');
@@ -16,19 +25,181 @@
 
 <body>
 
-    <h1>Weddings</h1>
-    <p align="center">
-        <input type="submit" name="submit" value="My Profile" form="1">
-        <input type="submit" name="submit" value="Update Me" form="2">
-        <input type="submit" name="submit" value="Search" form="3">
-        <input type="submit" name="submit" value="Delete Me" form="4">
-        <input type="submit" name="submit" value="Log Out" form="5">
-    </p>
+    <font><h1 align="right"> Weddings </h1></font>
+    <span>
+        <button type="submit" class="btn btn-secondary" data-toggle="modal" data-target="#profile"> My Profile </button>
+        <button type="submit" class="btn btn-secondary" data-toggle="modal" data-target="#update"> Update Me </button>
+        <button type="submit" class="btn btn-secondary" form="3"> Search </button>
+        <button type="submit" class="btn btn-secondary" form="4"> Delete Me </button>
+        <button type="submit" class="btn btn-secondary" form="5"> Log Out </button>
+    </span><br /><br />
 
-    <form action='myProfile.html' method='get' id="1"></form>
-    <form action='updateMe.html' method='get' id="2"></form>
+    <!-- My Profile Modal -->
+    <div class="modal fade" data-backdrop="static" data-keyboard="false" id="profile">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content  bg-secondary">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h2 class="modal-title"> My Profile </h2>
+                    <button type="button" class="close btn-danger" data-dismiss="modal"> &times; </button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <label> First Name: <label id="lbl1">  </label> </label><br />
+                    <label> Middel Name: <label id="lbl2"></label> </label><br />
+                    <label> Last Name: <label id="lbl3"></label> </label><br />
+                    <label> Age: <label id="lbl4"></label> </label><br />
+                    <label> Gender: <label id="lbl5"></label> </label><br />
+                    <label> Email ID: <label id="lbl6"></label> </label><br />
+                    <label> Password: <label id="lbl7"></label> </label><br />
+                    <label> Mobile No.: <label id="lbl8"></label> </label><br />
+                    <label> Mother Tongue: <label id="lbl9"></label> </label><br />
+                    <label> Height(cm): <label id="lbl10"></label> </label><br />
+                    <label> Weight(kg): <label id="lbl11"></label> </label><br />
+                    <label> Graduation: <label id="lbl12"></label> </label><br />
+                    <label> Marital Status: <label id="lbl13"></label> </label><br />
+                    <label> Address: <label id="lbl14"></label> </label><br />
+                    <label> City <label id="lbl15"></label> </label><br />
+                    <label> State: <label id="lbl16"></label> </label><br />
+                    <label> Pin Code: <label id="lbl17"></label> </label><br />
+                    <label> Country: <label id="lbl18"></label> </label><br />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <form onsubmit="alert('Your profile is updated');" action='userPage.html' method='get'>
+        <!-- Update Me Modal -->
+        <div class="modal fade" data-backdrop="static" data-keyboard="false" id="update">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content  bg-secondary">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h2 class="modal-title"> Update Me </h2>
+                        <button type="button" class="close btn-danger" data-dismiss="modal"> &times; </button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <label> Age: <label class="lbl" id="r_lbl4"></label> </label>
+                        <input class="form-control col-md-6" type="tel" value="21" name="age" pattern="[0-9]{2}" required><br />
+                        <label> Email ID: <label class="lbl" id="r_lbl6"></label> </label>
+                        <input class="form-control col-md-6" type="email" value="test@test.com" name='email' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{3}$" placeholder="char@char.domain" required><br />
+                        <label> New Password: <label class="lbl" id="r_lbl7"></label> </label>
+                        <input class="form-control col-md-6" type="password" value="12345" name='paswd1' required><br />
+                        <label> Re-enter Password: </label>
+                        <input class="form-control col-md-6" type="password" value="12345" name='paswd2' required><br />
+                        <label> Mobile No.: <label class="lbl" id="r_lbl8"></label> </label>
+                        <input class="form-control col-md-6" type="tel" name="mobile" value="1234567890" pattern="[0-9]{10}" required><br />
+                        <label> Height(cm): <label class="lbl" id="r_lbl10"></label> </label>
+                        <input class="form-control col-md-6" type="text" name='height' value="180" pattern="[0-9]{2,3}" required><br />
+                        <label> Weight(kg): <label class="lbl" id="r_lbl11"></label> </label>
+                        <input class="form-control col-md-6" type="text" name='weight' value="80" pattern="[0-9]{2,3}" required><br />
+                        <label> Graduation: <label class="lbl" id="r_lbl12"></label> </label>
+                        <input class="form-control col-md-6" type="text" name='graduation' value="Computer Engineer" required><br />
+                        <label> Address: <label class="lbl" id="r_lbl14"></label> </label>
+                        <input class="form-control col-md-6" type="text" name="addr" placeholder="1234 Main St, Apartment, studio, or floor" required><br />
+                        <label> City <label class="lbl" id="r_lbl15"></label> </label>
+                        <input class="form-control col-md-6" type="text" name='city' value="Bharuch" required><br />
+                        <label> State: <label class="lbl" id="r_lbl16"></label> </label>
+                        <input class="form-control col-md-6" type="text" name='state' value="Gujarat" required><br />
+                        <label> Pin Code: <label class="lbl" id="r_lbl17"></label> </label>
+                        <input class="form-control col-md-6" type="tel" name='pin' value="123456" pattern="[0-9]{6}" required><br />
+                        <label> Country: <label class="lbl" id="r_lbl18"></label> </label>
+                        <input class="form-control col-md-6" type="text" name='country' value="India" required><br />
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary"> Update </button>&nbsp; &nbsp;
+                        <button type="reset" class="btn btn-primary"> Reset </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!--<form action="searchResult.html" method="get">-->
+        <!-- Search Modal -->
+        <!--<div class="modal fade" data-backdrop="static" data-keyboard="false" id="register">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content  bg-secondary">-->
+                    <!-- Modal Header -->
+                    <!--<div class="modal-header">
+                        <h2 class="modal-title"> Search </h2>
+                        <button type="button" class="close btn-danger" data-dismiss="modal"> &times; </button>
+                    </div>-->
+
+                    <!-- Modal body -->
+                    <!--<div class="modal-body">
+                        <label> Age: <label class="lbl" id="r_lbl4"></label> </label>
+                        <input class="form-control col-md-6" type="tel" value="21" name="age" pattern="[0-9]{2}" required><br />
+                        <label> Gender: <label class="lbl" id="r_lbl5"></label> </label><br />
+                        <select class="custom-select col-md-6 my-1 mr-sm-2" name="gender" required>
+                            <option selected>Choose...</option>
+                            <option value="Male"> Male </option>
+                            <option value="Female"> Female </option>
+                        </select><br /><br />
+                        <label> Email ID: <label class="lbl" id="r_lbl6"></label> </label>
+                        <input class="form-control col-md-6" type="email" value="test@test.com" name='email' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{3}$" placeholder="char@char.domain" required><br />
+                        <label> Password: <label class="lbl" id="r_lbl7"></label> </label>
+                        <input class="form-control col-md-6" type="password" value="12345" name='paswd1' required><br />
+                        <label> Re-enter Password: </label>
+                        <input class="form-control col-md-6" type="password" value="12345" name='paswd2' required><br />
+                        <label> Mobile No.: <label class="lbl" id="r_lbl8"></label> </label>
+                        <input class="form-control col-md-6" type="tel" name="mobile" value="1234567890" pattern="[0-9]{10}" required><br />
+                        <label> Mother Tongue: <label class="lbl" id="r_lbl9"></label> </label><br />
+                        <select class="custom-select col-md-6 my-1 mr-sm-2" name="tongue" required>
+                            <option selected>Choose...</option>
+                            <option value="Hindi"> Hindi </option>
+                            <option value="Sanskrit"> Sanskrit </option>
+                            <option value="Gujarati"> Gujarati </option>
+                            <option value="Marathi"> Marathi </option>
+                            <option value="English"> English </option>
+                            <option value="Telugu"> Telugu </option>
+                            <option value="Tamil"> Tamil </option>
+                            <option value="Bengali"> Bengali </option>
+                            <option value="Kannada"> Kannada </option>
+                            <option value="Malayalam"> Malayalam </option>
+                            <option value="Punjabi"> Punjabi </option>
+                        </select><br /><br />
+                        <label> Height(cm): <label class="lbl" id="r_lbl10"></label> </label>
+                        <input class="form-control col-md-6" type="text" name='height' value="180" pattern="[0-9]{2,3}" required><br />
+                        <label> Weight(kg): <label class="lbl" id="r_lbl11"></label> </label>
+                        <input class="form-control col-md-6" type="text" name='weight' value="80" pattern="[0-9]{2,3}" required><br />
+                        <label> Graduation: <label class="lbl" id="r_lbl12"></label> </label>
+                        <input class="form-control col-md-6" type="text" name='graduation' value="Computer Engineer" required><br />
+                        <label> Marital Status: <label class="lbl" id="r_lbl13"></label> </label><br />
+                        <select class="custom-select col-md-6 my-1 mr-sm-2" name="status" required>
+                            <option selected>Choose...</option>
+                            <option value="Unmarried"> Unmarried </option>
+                            <option value="Married"> Married </option>
+                        </select><br /><br />
+                        <label> Address: <label class="lbl" id="r_lbl14"></label> </label>
+                        <input class="form-control col-md-6" type="text" name="addr" placeholder="1234 Main St, Apartment, studio, or floor" required><br />
+                        <label> City <label class="lbl" id="r_lbl15"></label> </label>
+                        <input class="form-control col-md-6" type="text" name='city' value="Bharuch" required><br />
+                        <label> State: <label class="lbl" id="r_lbl16"></label> </label>
+                        <input class="form-control col-md-6" type="text" name='state' value="Gujarat" required><br />
+                        <label> Pin Code: <label class="lbl" id="r_lbl17"></label> </label>
+                        <input class="form-control col-md-6" type="tel" name='pin' value="123456" pattern="[0-9]{6}" required><br />
+                        <label> Country: <label class="lbl" id="r_lbl18"></label> </label>
+                        <input class="form-control col-md-6" type="text" name='country' value="India" required><br />
+                    </div>-->
+
+                    <!-- Modal footer -->
+                    <!--<div class="modal-footer">
+                        <button type="submit" class="btn btn-primary"> Register </button>&nbsp; &nbsp;
+                        <button type="reset" class="btn btn-primary"> Reset </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>-->
+
     <form action='searchPage.html' method='get' id="3"></form>
-    <form onsubmit="alert('Your account is deleted')" action='index.html' method='get' id="4"></form>
+    <form onsubmit="confirm('Are you sure??? You want to delete account')" action='index.html' method='get' id="4"></form>
     <form onsubmit="alert('You are logged out from Weddings')" action='index.html' method='get' id="5"></form>
 
 </body>

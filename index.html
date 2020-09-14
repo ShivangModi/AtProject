@@ -3,19 +3,17 @@
 
 <head>
 
-    <title>Index Page</title>
-    <link rel="icon" type="image/png" href="image/index.png">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+    <title>Index Page</title>
+    <!--<link rel="icon" type="image/png" href="image/index.png">-->
     <!--CSS-->
     <link href="css/index.css" rel="stylesheet" type="text/css">
-
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
     <style>
         body {
             background-image: url('Image/DSC_8721.jpg');
@@ -28,12 +26,13 @@
 
 <body>
 
-    <font><h1 align="right">Weddings </h1></font>
+    <font><h1 align="right"> Weddings </h1></font>
 
+    <!-- Button to Open the Modal -->
     <span>
-        <button type="submit" class="btn btn-secondary" form="login"> Login </button>
-        <button type="submit" class="btn btn-secondary" form="register"> Register </button>
-        <button type="submit" class="btn btn-secondary" form="admin"> Admin </button>
+        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#login"> Login </button>
+        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#register"> Register </button>
+        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#admin"> Admin </button>
     </span><br /><br />
 
     <p><font> Information: </font></p>
@@ -49,10 +48,150 @@
         your desires, serving to you relevant matches higher than others.
     </p>
 
-    <form action='login.html' method="get" id="login"></form>
-    <form action='register.html' method="get" id="register"></form>
-    <form action='admin.html' method="get" id="admin"></form>
+    <form name="loginForm" onsubmit="return validateLogin()" action='userPage.html' method='get'>
+        <!-- Login Modal -->
+        <div class="modal fade" data-backdrop="static" data-keyboard="false" id="login">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content  bg-secondary">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h2 class="modal-title"> Login into your account </h2>
+                        <button type="button" class="close btn-danger" data-dismiss="modal"> &times; </button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <label> Email ID:  &nbsp; &nbsp; <label class="lbl" id="l_lbl1"> Enter the Email-id. </label> </label>
+                        <input type="email" class="form-control col-md-6" value="test@test.com" name="email" placeholder="char@char.domain" aria-describedby="emailHelp"><br />
+                        <label> Password:  &nbsp; &nbsp; <label class="lbl" id="l_lbl2"> Enter the password. </label></label>
+                        <input type="password" class="form-control col-md-6" value="12345" name="paswd" placeholder="Password">
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary"> Login </button>&nbsp; &nbsp;
+                        <button type="button" class="btn btn-primary"> Reset </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <form name="registerForm" onsubmit="return validateRegister()" action='index.html' method='get'>
+        <!-- Register Modal -->
+        <div class="modal fade" data-backdrop="static" data-keyboard="false" id="register">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content  bg-secondary">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h2 class="modal-title"> Register your account </h2>
+                        <button type="button" class="close btn-danger" data-dismiss="modal"> &times; </button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <label> First Name: <label class="lbl" id="r_lbl1"></label> </label>
+                        <input class="form-control col-md-6" type="text" value="Shivang" name="f_n" required><br />
+                        <label> Middel Name: <label class="lbl" id="r_lbl2"></label> </label>
+                        <input class="form-control col-md-6" type="text" value="Bhaskarbhai" name="m_n" required><br />
+                        <label> Last Name: <label class="lbl" id="r_lbl3"></label> </label>
+                        <input class="form-control col-md-6" type="text" value="Shivang" name="l_n" required><br />
+                        <label> Age: <label class="lbl" id="r_lbl4"></label> </label>
+                        <input class="form-control col-md-6" type="tel" value="21" name="age" pattern="[0-9]{2}" required><br />
+                        <label> Gender: <label class="lbl" id="r_lbl5"></label> </label><br />
+                        <select class="custom-select col-md-6 my-1 mr-sm-2" name="gender" required>
+                            <option selected>Choose...</option>
+                            <option value="Male"> Male </option>
+                            <option value="Female"> Female </option>
+                        </select><br /><br />
+                        <label> Email ID: <label class="lbl" id="r_lbl6"></label> </label>
+                        <input class="form-control col-md-6" type="email" value="test@test.com" name='email' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{3}$" placeholder="char@char.domain" required><br />
+                        <label> Password: <label class="lbl" id="r_lbl7"></label> </label>
+                        <input class="form-control col-md-6" type="password" value="12345" name='paswd1' required><br />
+                        <label> Re-enter Password: </label>
+                        <input class="form-control col-md-6" type="password" value="12345" name='paswd2' required><br />
+                        <label> Mobile No.: <label class="lbl" id="r_lbl8"></label> </label>
+                        <input class="form-control col-md-6" type="tel" name="mobile" value="1234567890" pattern="[0-9]{10}" required><br />
+                        <label> Mother Tongue: <label class="lbl" id="r_lbl9"></label> </label><br />
+                        <select class="custom-select col-md-6 my-1 mr-sm-2" name="tongue" required>
+                            <option selected>Choose...</option>
+                            <option value="Hindi"> Hindi </option>
+                            <option value="Sanskrit"> Sanskrit </option>
+                            <option value="Gujarati"> Gujarati </option>
+                            <option value="Marathi"> Marathi </option>
+                            <option value="English"> English </option>
+                            <option value="Telugu"> Telugu </option>
+                            <option value="Tamil"> Tamil </option>
+                            <option value="Bengali"> Bengali </option>
+                            <option value="Kannada"> Kannada </option>
+                            <option value="Malayalam"> Malayalam </option>
+                            <option value="Punjabi"> Punjabi </option>
+                        </select><br /><br />
+                        <label> Height(cm): <label class="lbl" id="r_lbl10"></label> </label>
+                        <input class="form-control col-md-6" type="text" name='height' value="180" pattern="[0-9]{2,3}" required><br />
+                        <label> Weight(kg): <label class="lbl" id="r_lbl11"></label> </label>
+                        <input class="form-control col-md-6" type="text" name='weight' value="80" pattern="[0-9]{2,3}" required><br />
+                        <label> Graduation: <label class="lbl" id="r_lbl12"></label> </label>
+                        <input class="form-control col-md-6" type="text" name='graduation' value="Computer Engineer" required><br />
+                        <label> Marital Status: <label class="lbl" id="r_lbl13"></label> </label><br />
+                        <select class="custom-select col-md-6 my-1 mr-sm-2" name="status" required>
+                            <option selected>Choose...</option>
+                            <option value="Unmarried"> Unmarried </option>
+                            <option value="Married"> Married </option>
+                        </select><br /><br />
+                        <label> Address: <label class="lbl" id="r_lbl14"></label> </label>
+                        <input class="form-control col-md-6" type="text" name="addr" placeholder="1234 Main St, Apartment, studio, or floor" required><br />
+                        <label> City <label class="lbl" id="r_lbl15"></label> </label>
+                        <input class="form-control col-md-6" type="text" name='city' value="Bharuch" required><br />
+                        <label> State: <label class="lbl" id="r_lbl16"></label> </label>
+                        <input class="form-control col-md-6" type="text" name='state' value="Gujarat" required><br />
+                        <label> Pin Code: <label class="lbl" id="r_lbl17"></label> </label>
+                        <input class="form-control col-md-6" type="tel" name='pin' value="123456" pattern="[0-9]{6}" required><br />
+                        <label> Country: <label class="lbl" id="r_lbl18"></label> </label>
+                        <input class="form-control col-md-6" type="text" name='country' value="India" required><br />
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary"> Register </button>&nbsp; &nbsp;
+                        <button type="reset" class="btn btn-primary"> Reset </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <form name="adminForm" onsubmit="return validateAdmin()" action='adminPage.html' method='get'>
+        <!-- Admin Modal -->
+        <div class="modal fade" data-backdrop="static" data-keyboard="false" id="admin">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content  bg-secondary">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h2 class="modal-title"> Admin account </h2>
+                        <button type="button" class="close btn-danger" data-dismiss="modal"> &times; </button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <label> Admin Name:  &nbsp; &nbsp; <label class="lbl" id="a_lbl1"> Enter the correct admin name. </label> </label>
+                        <input class="form-control col-md-6" type="text" value="user1" name="aname" placeholder="Admin"><br />
+                        <label> Password:  &nbsp; &nbsp; <label class="lbl" id="a_lbl2"> Enter the correct password. </label></label>
+                        <input class="form-control col-md-6" type="password" value="user10702" name='paswd' placeholder="Password"><br />
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary"> Login </button>&nbsp; &nbsp;
+                        <button type="reset" class="btn btn-primary"> Reset </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
 
 </body>
 
 </html>
+
+<script type="text/javascript" src="validate.js"></script>
